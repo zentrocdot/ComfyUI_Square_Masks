@@ -63,4 +63,4 @@ class CircleMasks:
         channels = ["red", "green", "blue", "alpha"]
         mask = maskImage[:, :, :, channels.index(channel)]
         # Return the return types.
-        return (mask)
+        return (mask,)
