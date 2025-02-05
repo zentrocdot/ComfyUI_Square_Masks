@@ -50,7 +50,7 @@ class CircleMasks:
         # Return maskImage.
         return maskImage
 
-    def circle_mask_creation(self, width, height, radius, xpos, ypos):
+    def circle_mask_creation(self, width, height, radius, xPos, yPos):
         '''Main script function.'''
         # Create mask.
         image = self.create_mask()
