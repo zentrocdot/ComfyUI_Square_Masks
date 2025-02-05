@@ -44,6 +44,7 @@ class CircleMasks:
     def create_mask(self, width, height, radius, xpos, ypos):
         '''Create circle mask.'''
         # Create an blank image.
+        channels = 3
         maskImage = np.zeros((height, width, channels), np.uint8)
         # Draw the circumference of the circle filled.
         cv2.circle(maskImage, (width, height), radius, (255,255,255), -1)
