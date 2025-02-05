@@ -1,0 +1,1 @@
+# ComfyUI_Square_Masks
