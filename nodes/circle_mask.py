@@ -53,9 +53,9 @@ class CircleMasks:
     def circle_mask_creation(self, width, height, radius, xPos, yPos):
         '''Main script function.'''
         # Create mask.
-        image = self.create_mask()
+        image = self.create_mask(width, height, radius, xPos, yPos)
         # Create output image.
-        image_output = Image.fromarray(imgage)
+        image_output = Image.fromarray(image)
         # Create tensor.
         maskImage = pil2tensor(image_output)
         # Return None.
