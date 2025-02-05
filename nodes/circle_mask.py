@@ -35,8 +35,8 @@ class CircleMasks:
             }
         }
 
-    RETURN_TYPES = ("MASK")
-    #RETURN_NAMES = ("MASK")
+    RETURN_TYPES = ("MASK",)
+    #RETURN_NAMES = ("MASK",)
     FUNCTION = "circle_mask_creation"
     CATEGORY = "🧬 Square Mask Nodes"
     OUTPUT_NODE = True
