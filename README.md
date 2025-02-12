@@ -25,6 +25,34 @@ view, this node was more demanding than the nodes before.</p>
 be larger than 512 x 512 pixels. In the penultimate version of the node, I
 had steps in the edges of the mask and the transitions were not sharp.</p>
 
+## Node Preview
+
+### Preview
+
+![Bildschirmfoto vom 2025-02-12 21-13-33](https://github.com/user-attachments/assets/449f477f-f330-4ab0-b91c-406fb907261f)
+
+### Settings
+
+#### Settings Itself
+
+<p align="justify">The node consists of three important parts, the input and
+output connectors and the settings.</p>
+
+The settings are
+
++ sides
++ scale
+
+#### sides
+
+The sides is the number of sides of a n-gon. It can start with 3 for a triangle
+and can go up in steps of one. If one goes direction infinity one will get a circle
+or something which looks like a circle.
+
+#### scale
+
+With scale one can scale the n-gon up or down.
+
 ## Example Preview
 
 ![Bildschirmfoto vom 2025-02-12 21-01-24](https://github.com/user-attachments/assets/de5882b0-8853-4bf1-a924-21a100e9da78)
