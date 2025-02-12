@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI-Simple_Square_Masks"
 description = "ComfyUI simple square masks creation."
-version = "0.0.0.2"
+version = "0.0.0.3"
 license = {file = "LICENSE"}
 
 [project.urls]
