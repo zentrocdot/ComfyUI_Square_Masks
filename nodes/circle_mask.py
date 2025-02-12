@@ -119,26 +119,28 @@ def sharp_contour(image):
     '''Sharpen contour.'''
     # Convert image to grayscale.
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    # Threshold to binary.
+    # Convert threshold to binary image.
     thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY)[1]
-    # Apply morphology.
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5,5))
-    morph = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel)
-    # Find all contours.
+    # Apply morphology using a kernel.
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5,5))
+    morph = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
+    # Copy image.
     newimg = morph.copy()
+    # Find all contours.
     cntrs = cv2.findContours(morph, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cntrs = cntrs[0] if len(cntrs) == 2 else cntrs[1]
+    # Loop over all contours.
     for c in cntrs:
-        #area = cv2.contourArea(c)
-        #cv2.drawContours(newimg,[c],0,(0,0,0),-1)
+        # Draw the contour.
+        cv2.drawContours(newimg,[c],0,(0,0,0),-1)
+        # Calculate the approximation.
         perimeter = cv2.arcLength(c, True)
         approximation = cv2.approxPolyDP(c, 0.01 * perimeter, True)
+        # Draw the contour.
         cv2.drawContours(newimg, [approximation], -1, (255, 255, 255), 3)
-        newimg = cv2.fillPoly(newimg, pts=[approximation], color=(255,255,255))
-    # Do canny edge detection.
-    #edges = cv2.Canny(newimg, 200, 200)
+        newimg_out = cv2.fillPoly(newimg, pts=[approximation], color=(255,255,255))
     # Return image.
-    return newimg
+    return newimg_out
 
 class NgonMasks:
     '''Create a circle mask in a square image.'''
@@ -157,7 +159,7 @@ class NgonMasks:
                 "alpha": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 360.0, "step": 0.01}),
                 "xPos": ("INT", {"default": 0, "min": -8192, "max": 8192, "step": 1}),
                 "yPos": ("INT", {"default": 0, "min": -8192, "max": 8192, "step": 1}),
-                "sharpen_contour": ("BOOLEAN", {"default": False})
+                "sharpen_contour": ("BOOLEAN", {"default": True})
             },
             "optional": {
                 "image": ("IMAGE",),
