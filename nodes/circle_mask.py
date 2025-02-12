@@ -257,7 +257,6 @@ class NgonMasks:
         else:
             # Get width and height.
             width, height = 512, 512
-        print(width, height)
         # Create a mask image.
         maskImage = self.ngon_mask(sharpen_contour, width, height, xPos, yPos, sides, alpha, scale)
         # Create a tensor.
