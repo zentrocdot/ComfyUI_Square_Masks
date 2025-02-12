@@ -1,1 +1,36 @@
 # ComfyUI_Square_Masks
+
+> [!IMPORTANT]  
+> <p align="justify">🚧 This documentation is still under construction.
+> Parts of the node are still under development. There may therefore be
+> minor differences between the node itself and the documentation for
+> the node. The documentation is also not yet complete.</p>
+
+## Preface
+
+<p align="justify">The node in its current form is the result of tests
+that I carried out with it during the course of the day. I had to change
+parts of the code again and again.</p>
+
+## Motivation
+
+<p align="justify">I was looking for a node with the funcionality of this 
+node some time ago and despite an intensive search I couldn't find it. So
+I programmed it myself based on my experience. From a mathematical point of
+view, this node was more demanding than the nodes before.</p>
+
+## Challenge
+
+<p align="justify">It turned out to be a challenge that a source image can
+be larger than 512 x 512 pixels. In the penultimate version of the node, I
+had steps in the edges of the mask and the transitions were not sharp.</p>
+
+## Example Preview
+
+![Bildschirmfoto vom 2025-02-12 21-01-24](https://github.com/user-attachments/assets/de5882b0-8853-4bf1-a924-21a100e9da78)
+
+## Open questions
+
+<p align="justify">Even after a few tests, I'm still not sure whether a mask
+generally has to have a variable size. What I do know is that the programmed
+procedure works.</p>
