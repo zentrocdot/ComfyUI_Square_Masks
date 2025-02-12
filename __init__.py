@@ -1,8 +1,8 @@
 from .nodes.circle_mask import *
 
 NODE_CLASS_MAPPINGS = { 
-    "🔬 Circle Masks": CircleMasks,
-    "🔬 Heptagon Masks": HeptagonMasks,
+    "⚗️ Circle Masks": CircleMasks,
+    "⚗️ Ngon Masks": NgonMasks,
     }
     
 WEB_DIRECTORY = "./js"
